@@ -1808,8 +1808,8 @@ def chatapiai():
                 print "no"+from_number
                 cur.execute("update chat_user set context=%s where mobile_no=%s"%(fetcontext1,from_number))
 		print dataDict["output"]		
-		print dataDict["output"]["text"][0].encode('ascii','ignore')
-                out_msg= dataDict["output"]["text"][0].encode('ascii','ignore')
+		print dataDict["output"]["text"][0].encode('utf-8')
+                out_msg= dataDict["output"]["text"][0].encode('utf-8')
 		if language_val1 == 'ja':
                 	action=''
 		else:
