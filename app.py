@@ -1809,7 +1809,7 @@ def chatapiai():
                 cur.execute("update chat_user set context=%s where mobile_no=%s"%(fetcontext1,from_number))
 		print dataDict["output"]		
 		print dataDict["output"]["text"][0].encode('ascii','ignore')
-                out_msg= dataDict["output"]["text"][0]		
+                out_msg= dataDict["output"]["text"][0].encode('ascii','ignore')	
                 action=dataDict["output"]["action"]
                 print action                
                 if action =='list':
