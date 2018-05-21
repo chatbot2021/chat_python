@@ -1810,9 +1810,9 @@ def chatapiai():
 		print dataDict["output"]		
 		print dataDict["output"]["text"][0].encode('ascii','ignore')
                 out_msg= dataDict["output"]["text"][0].encode('ascii','ignore')
-		if language_val1 == 'ja'
+		if language_val1 == 'ja':
                 	action=''
-		else
+		else:
 			action=dataDict["output"]["action"]
                 print action                
                 if action =='list':
