@@ -1810,7 +1810,7 @@ def chatapiai():
                         context=context
                 )
                 
-                dataDict = json.loads(json.dumps(response))        
+                dataDict = json.loads(json.dumps(response, encoding="utf-8"))        
                 fetcontext = json.dumps(dataDict["context"])
                 fetcontext1 = "'"+fetcontext+"'"
                 print fetcontext1
