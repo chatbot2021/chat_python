@@ -1810,7 +1810,7 @@ def chatapiai():
 		print dataDict["output"]		
 		print dataDict["output"]["text"][0].encode('utf-8')
                 out_msg= dataDict["output"]["text"][0].encode('utf-8')
-		if language_val1 == 'ja':
+		if language_val1 == 'ja' or language_val1 == 'zh-TW' or language_val2 == 'zh-TW':
                 	action=''
 		else:
 			action=dataDict["output"]["action"]
