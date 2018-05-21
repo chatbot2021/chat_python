@@ -1798,6 +1798,8 @@ def chatapiai():
                 workspace_id='66b35628-95ba-4fd0-9d9a-3746ecadc6a8'
                 if language_val1 == 'es' or language_val2== 'es':                        
                         workspace_id = 'b9757313-7979-48d7-88ac-e33241397980'
+		elif language_val1 == 'ja' or language_val2 == 'ja':
+			workspace_id = '18ace7e3-c6cc-4162-8f7a-c4ddb681577d'
                 
                 
                 
