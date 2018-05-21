@@ -1818,6 +1818,7 @@ def chatapiai():
                 cur.execute("update chat_user set context=%s where mobile_no=%s"%(fetcontext1,from_number))
 		print dataDict["output"]
                 out_msg= dataDict["output"]["text"][0]
+		print out_msg.decode('utf-8')
                 action=dataDict["output"]["action"]
                 print action
                 print out_msg
