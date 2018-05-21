@@ -8,15 +8,6 @@ import random
 import string
 import apiai
 import urllib2
-import time# -*- coding: utf-8 -*-
-from flask import make_response
-import os
-import urlparse
-import psycopg2
-import random
-import string
-import apiai
-import urllib2
 import time
 import datetime
 import requests
@@ -1810,14 +1801,13 @@ def chatapiai():
                         context=context
                 )
                 
-                dataDict = json.loads(json.dumps(response, encoding="utf-8"))        
+                dataDict = json.loads(json.dumps(response)        
                 fetcontext = json.dumps(dataDict["context"])
                 fetcontext1 = "'"+fetcontext+"'"
                 print fetcontext1
                 print "no"+from_number
                 cur.execute("update chat_user set context=%s where mobile_no=%s"%(fetcontext1,from_number))
-		print dataDict["output"]
-		print sys.getdefaultencoding()
+		print dataDict["output"]		
 		print dataDict["output"]["text"][0]
                 out_msg= dataDict["output"]["text"][0]		
                 action=dataDict["output"]["action"]
