@@ -1810,18 +1810,17 @@ def chatapiai():
                         context=context
                 )
                 
-                dataDict = json.loads(json.dumps(response,ensure_ascii=False))        
+                dataDict = json.loads(json.dumps(response))        
                 fetcontext = json.dumps(dataDict["context"])
                 fetcontext1 = "'"+fetcontext+"'"
                 print fetcontext1
                 print "no"+from_number
                 cur.execute("update chat_user set context=%s where mobile_no=%s"%(fetcontext1,from_number))
 		print dataDict["output"]
-                out_msg= dataDict["output"]["text"][0].decode('utf-8')
-		print out_msg.decode('utf-8')
+		print dataDict["output"]["text"][0]
+                out_msg= dataDict["output"]["text"][0]		
                 action=dataDict["output"]["action"]
-                print action
-                print out_msg
+                print action                
                 if action =='list':
                         account_list="\n"+"1-Checking 4954"+"\n"+"2-Savings 1256"+"\n"+"3-Creditcard 2572"
                         out_msg=out_msg%account_list
