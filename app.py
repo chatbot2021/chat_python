@@ -1759,9 +1759,9 @@ def chatapiai():
         if cur.fetchone():                              
                 print "before"
                 conversation = ConversationV1(
-                        username='ea42ba18-5ebe-432c-ba36-d237ba4b76fb',
-                        password='mfYTHk05k7Hg',
-                        version='2018-07-04'
+                        username='fae8a157-a382-43e2-bddb-59ef82946481',
+                        password='mdqboUrRRbyO',
+                        version='2016-09-20'
                 )
                
                 cur.execute("select context from chat_user where mobile_no=%s"%from_number)
@@ -1786,7 +1786,7 @@ def chatapiai():
                 
                 print language_val1
                 print language_val2
-                workspace_id='581b94d9-e3ef-4a1c-8231-53a29bd1e6c9'
+                workspace_id='66b35628-95ba-4fd0-9d9a-3746ecadc6a8'
                 if language_val1 == 'es' or language_val2== 'es':                        
                         workspace_id = 'b9757313-7979-48d7-88ac-e33241397980'
 		elif language_val1 == 'ja' or language_val1 == 'zh-TW' or language_val2 == 'zh-TW' or language_val2 == 'zh':
