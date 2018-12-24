@@ -1975,7 +1975,8 @@ def chatapiai():
 			transferOnDate=time.strftime("%m/%d/%Y")
 			print transferOnDate
 			string_result = ''
-			string_result='Tansfer schedule on is %s'%transferOnDate
+			string_result='Tansfer schedule date is '+transferOnDate
+			out_msg = string_result
                 elif action == 'spent':
                         entities= dataDict["entities"]
                         retailname=[]
