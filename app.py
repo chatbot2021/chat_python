@@ -1964,6 +1964,18 @@ def chatapiai():
                                 out_msg = string_result
                         else:
                                 out_msg = 'No Bills Due.'
+		elif action == 'transfers':
+			entities= dataDict["entities"]
+			transferOnDate=''
+			print "Transfer Context"
+			if entities:                        
+					for ent in entities:
+						if ent["entity"] == 'sys-date':
+							transferOnDate = ent["value"]
+			transferOnDate=time.strftime("%m/%d/%Y")
+			print transferOnDate
+			string_result = ''
+			string_result='Tansfer schedule on is %s'%transferOnDate
                 elif action == 'spent':
                         entities= dataDict["entities"]
                         retailname=[]
