@@ -1972,7 +1972,7 @@ def chatapiai():
 					for ent in entities:
 						if ent["entity"] == 'sys-date':
 							transferOnDate = ent["value"]
-			transferOnDate=time.strftime("%m/%d/%Y")
+			#transferOnDate=time.strftime("%m/%d/%Y")
 			print transferOnDate
 			string_result = ''
 			string_result='Tansfer schedule date is '+transferOnDate
