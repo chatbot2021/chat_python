@@ -1973,10 +1973,13 @@ def chatapiai():
 						if ent["entity"] == 'sys-date':
 							transferOnDate = ent["value"]
 			#transferOnDate=time.strftime("%m/%d/%Y")
-			print transferOnDate
-			string_result = ''
-			string_result='Tansfer schedule date is '+transferOnDate
-			out_msg = string_result
+			if not transferOnDate:
+                                out_msg = 'Please specify the Date'
+			else:
+				print transferOnDate
+				string_result = ''
+				string_result='Tansfer schedule date is '+transferOnDate
+				out_msg = string_result
                 elif action == 'spent':
                         entities= dataDict["entities"]
                         retailname=[]
