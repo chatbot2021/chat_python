@@ -1986,7 +1986,7 @@ def chatapiai():
 				if not tot_transfer_amnt:
 					string_result='No transfers scheduled on specified Date.'
 					out_msg = string_result
-				else 
+				else: 
 					print tot_transfer_amnt
 					string_result +='Total transfer amount is $%s'%tot_transfer_amnt
 					out_msg = string_result
