@@ -1982,10 +1982,14 @@ def chatapiai():
 	  			print olb_id
 	  			cur.execute('select sum(tran_amount) from schedule_transfer where olb_id=%s and scheduled_date=%s'%(olb_id,"'"+transferOnDate+"'"))
       				tot_transfer_amnt=cur.fetchone()[0]
-      				print tot_transfer_amnt
 				string_result = ''
-	  			string_result +='Total transfer amount is $%s'%tot_transfer_amnt
-				out_msg = string_result
+				if not tot_transfer_amnt:
+					string_result='No transfers scheduled on specified Date.'
+					out_msg = string_result
+				else 
+					print tot_transfer_amnt
+					string_result +='Total transfer amount is $%s'%tot_transfer_amnt
+					out_msg = string_result
                 elif action == 'spent':
                         entities= dataDict["entities"]
                         retailname=[]
