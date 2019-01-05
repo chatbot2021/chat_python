@@ -1977,8 +1977,14 @@ def chatapiai():
                                 out_msg = 'Please specify the Date'
 			else:
 				print transferOnDate
+				cur.execute('select olb_id from chat_user where mobile_no=%s'%from_number)
+				olb_id="'"+cur.fetchone()[0]+"'"
+	  			print olb_id
+	  			cur.execute('select sum(tran_amount) from schedule_transfer where olb_id=%s and scheduled_date=%s'%(olb_id,"'"+transferOnDate+"'"))
+      				tot_transfer_amnt=cur.fetchone()[0]
+      				print tot_transfer_amnt
 				string_result = ''
-				string_result='Tansfer schedule date is '+transferOnDate
+	  			string_result +='Total transfer amount is $%s'%tot_transfer_amnt
 				out_msg = string_result
                 elif action == 'spent':
                         entities= dataDict["entities"]
