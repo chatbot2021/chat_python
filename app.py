@@ -1990,6 +1990,19 @@ def chatapiai():
 					print tot_transfer_amnt
 					string_result +='Total transfer amount is $%s'%tot_transfer_amnt
 					out_msg = string_result
+		elif action == 'applyleave':
+			entities= dataDict["entities"]
+			applyLeaveDate=''
+			if entities:                        
+					for ent in entities:
+						if ent["entity"] == 'sys-date':
+							applyLeaveDate = ent["value"]
+			if not applyLeaveDate:
+                                out_msg = dataDict["output"]
+			else:
+				print applyLeaveDate
+				string_result = dataDict["output"]%applyLeaveDate
+				out_msg = string_result
                 elif action == 'spent':
                         entities= dataDict["entities"]
                         retailname=[]
