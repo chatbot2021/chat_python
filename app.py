@@ -1992,16 +1992,17 @@ def chatapiai():
 					out_msg = string_result
 		elif action == 'applyleave':
 			entities= dataDict["entities"]
+			print "Apply Leave Context"
 			applyLeaveDate=''
 			if entities:                        
 					for ent in entities:
 						if ent["entity"] == 'sys-date':
 							applyLeaveDate = ent["value"]
 			if not applyLeaveDate:
-                                out_msg = dataDict["output"]
+                                out_msg = dataDict["output"]["text"][0].encode('utf-8')
 			else:
 				print applyLeaveDate
-				string_result = dataDict["output"]%applyLeaveDate
+				string_result = dataDict["output"]["text"][0].encode('utf-8')%applyLeaveDate
 				out_msg = string_result
                 elif action == 'spent':
                         entities= dataDict["entities"]
